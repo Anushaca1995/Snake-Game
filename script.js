@@ -25,6 +25,15 @@ const initSnake = () => {
         });
     }
 };
+// Init Food  
+const initFood = () => {
+
+    // Add food on stage
+    food = {
+      x: Math.round(Math.random() * (width - conf.cw) / conf.cw),
+      y: Math.round(Math.random() * (height - conf.cw) / conf.cw),
+    };
+  };
 // Check Collision with walls
 const collision = (nx, ny) => {
     if (nx == -1 || nx == (width / conf.cw) || ny == -1 || ny == (height / conf.cw)) {
@@ -69,6 +78,21 @@ const drawStage = () => {
     restart();
     return;
   }
+  // Logic of Snake food
+  if (nx == food.x && ny == food.y) {
+    var tail = {
+      x: nx,
+      y: ny
+    };
+    score++;
+    initFood();
+  } else {
+    var tail = length.pop();
+    tail.x = nx;
+    tail.y = ny;
+  }
+  length.unshift(tail);
+
 // Draw Snake
   for (var i = 0; i < length.length; i++) {
     var cell = length[i];
@@ -83,8 +107,6 @@ const drawCell = (x, y) => {
     context.fill();
   
   };
-
-
 
 // Game Snake
 const gameSnake = () => {
