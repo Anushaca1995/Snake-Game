@@ -1,1 +1,15 @@
 # Snake-Game
+
+Pseudo code for snake game
+
+1. Create a game area by setting width and height of the canvas.
+
+2. Add a snake component into the game area.
+
+3. Add food for the snake at the random places inside the game area.
+
+4. Add keyboard events to know about the key coda and to track the snake movement
+
+5. When the snake position and food position becomes same, add score of the player and add another food component randomly.
+
+6. Show game over when the snake reaches any of the four boundaries of the game area and restart the game.
