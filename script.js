@@ -34,6 +34,15 @@ const initFood = () => {
       y: Math.round(Math.random() * (height - conf.cw) / conf.cw),
     };
   };
+  // Restart Stage
+const restart = () => {
+    length = [];
+    food = {};
+    score = 0;
+    direction = 'right';
+    initSnake();
+    initFood();
+  };
 // Check Collision with walls
 const collision = (nx, ny) => {
     if (nx == -1 || nx == (width / conf.cw) || ny == -1 || ny == (height / conf.cw)) {
