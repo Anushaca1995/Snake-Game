@@ -32,19 +32,4 @@ body .button-container .button {
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 50%;
-}
-
-@media screen and (min-width: 600px) and (max-width: 700px) {
-  .canvas-container .game-area {
-    width: 300px;
-    background-color: aqua;
-  }
-}
-@media screen and (min-width: 300px) and (max-width: 600px) {
-  .canvas-container .game-area {
-    width: 100px;
-    background-color: #ff009d;
-  }
-}7);
-  }
 }/*# sourceMappingURL=style.css.map */
