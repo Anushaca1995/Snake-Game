@@ -25,6 +25,13 @@ const initSnake = () => {
         });
     }
 };
+// Check Collision with walls
+const collision = (nx, ny) => {
+    if (nx == -1 || nx == (width / conf.cw) || ny == -1 || ny == (height / conf.cw)) {
+      return true;
+    }
+    return false;
+  }
 //Draw Stage
 const drawStage = () => {
   // Check Keypress And Set Stage direction
@@ -55,6 +62,12 @@ const drawStage = () => {
     case 'down':
       ny++;
       break;
+  }
+  // Check Collision
+  if (collision(nx, ny) == true) {
+    //alert("Game Over");
+    restart();
+    return;
   }
 // Draw Snake
   for (var i = 0; i < length.length; i++) {
