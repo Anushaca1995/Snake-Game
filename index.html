@@ -11,20 +11,22 @@
 
 <body>
     <h1 class="header">Snake Game</h1>
-    <p class="score">Score</p>
+    <p class="score"><span id="game-over" hidden>Game Over </span>Score</p>
     <div class="canvas-container">
         <canvas class="game-area"></canvas>
     </div>
     <script src="./script.js"></script>
-    <div class="pause"> <button class="button" onclick="getRestart();">Restart</button></div>
+    <div class="restart-container"> 
+        <button class="restart-button" onclick="getRestart();">Restart</button>
+    </div>
     
-    <div class="button-container">
-        <button class="button" onclick="getPressKey('up');">Up</button>
+    <div class="arrow-container">
+        <button class="arrow-button" onclick="getPressKey('up');">Up</button>
         <br>
-        <button class="button" onclick="getPressKey('left');">Left</button>
-        <button class="button" onclick="getPressKey('right');">Right</button>
+        <button class="arrow-button" onclick="getPressKey('left');">Left</button>
+        <button class="arrow-button" onclick="getPressKey('right');">Right</button>
         <br>
-        <button class="button" onclick="getPressKey('down');">Down</button>
+        <button class="arrow-button" onclick="getPressKey('down');">Down</button>
     </div>
 </body>
 

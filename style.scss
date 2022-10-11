@@ -1,43 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 body {
-    background-color: black;
-
+    background-color: rgb(174, 210, 125);
     .header {
         font-family: 'Alfa Slab One', cursive;
-        color: #cd7cb4;
+        color: #074907;
         text-align: center;
     }
-
+    .score{
+        font-size: 25px;
+        color: #074907;
+        text-align: center;
+        font-weight: bold;
+    }
     .canvas-container {
         margin-top: 30px;
         display: flex;
         justify-content: center;
 
         .game-area {
-            border: 5px solid #cb6eaf;
-            width: 500px;
+            border: 5px solid #074907;
+            border-radius: 2%;
+            width: 600px;
             height: 300px;
         }
 
     }
-
-    .button-container {
-        margin-top: 30px;
+    .restart-container{
         display: flex;
-        align-items: center;
         justify-content: center;
-
-        .button {
-            background-color: #cb6eaf;
-            color: white;
-            padding: 20px;
+        .restart-button{
+            background-color: #bede6c;
+            color: rgb(10, 35, 5);
+            padding: 10px;
             text-align: center;
             text-decoration: none;
             font-size: 16px;
-            margin: 4px 2px;
-            border-radius: 50%;
+            margin-top: 10px;
+            border-radius: 20%;
+        }
+    }
+    
+    .arrow-container {
+        margin-top: 10px;
+        text-align: center;
+        .arrow-button {
+            background-color: #0e5a34;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 2px;
+            border-radius: 30%;
         }
     }
 }
 
+@media screen and (min-width: 600px) and (max-width: 700px) {
+    .canvas-container {
+        .game-area {
+            width: 300px;
+        }
+    }
+   
+
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    .canvas-container {
+        .game-area {
+            width: 100px;
+        }
+    }
+   
+}
