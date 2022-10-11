@@ -90,7 +90,7 @@ const drawStage = () => {
   // Check Collision
   if (collision(nx, ny) == true) {
     if (flag){
-      console.log("Game over");
+      alert("Game over");
       flag=0;
     }
     
@@ -128,7 +128,7 @@ const drawStage = () => {
 const drawCell = (x, y) => {
   context.fillStyle = '#071C02';
   context.beginPath();
-  context.arc((x * conf.cw + 6 ), (y * conf.cw + 6), 4, 0, 2 * Math.PI, false);
+  context.arc((x * conf.cw + 6 ), (y * conf.cw + 6), 3, 0, 2 * Math.PI, false);
   context.fill();
 
 };
@@ -136,8 +136,6 @@ const drawCell = (x, y) => {
 const collision = (nx, ny) => {
   if (nx == -1 || nx == 37 || ny == -1 || ny == 19) {
     return true;
-  } if (ny==19){
-    return true
   }
   return false;
 }
