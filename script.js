@@ -57,11 +57,12 @@ const getRestart = () => {
 // Draw Stage
 const drawStage = () => {
   // Check Keypress And Set Stage direction
-  let keyPress = snake_dir;
-  if (typeof (keyPress) != 'undefined') {
-    direction = keyPress;
+  if (snake_dir != "") {
+    let keyPress = snake_dir;
+    if (typeof (keyPress) != 'undefined') {
+      direction = keyPress;
+    }
   }
-  // Draw blue Stage
   context.fillStyle = "#D6C0D4";
   //create filled rectangle context.fillRect(x,y,width,height);
   context.fillRect(0, 0, width, height);
