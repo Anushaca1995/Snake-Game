@@ -21,7 +21,7 @@ body .canvas-container {
 body .canvas-container .game-area {
   border: 5px solid #074907;
   border-radius: 2%;
-  width: 600px;
+  width: 500px;
   height: 300px;
 }
 body .restart-container {
@@ -53,13 +53,8 @@ body .arrow-container .arrow-button {
   border-radius: 30%;
 }
 
-@media screen and (min-width: 600px) and (max-width: 700px) {
-  .canvas-container .game-area {
-    width: 300px;
-  }
-}
-@media screen and (min-width: 300px) and (max-width: 600px) {
-  .canvas-container .game-area {
-    width: 100px;
+@media screen and (max-width: 470px) {
+  body .canvas-container .game-area {
+    width: 100%;
   }
 }

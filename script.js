@@ -5,24 +5,24 @@ let length = [];
 let food = {};
 let flag;
 let score = 0;
-let pause=0;
+let pause = 0;
 let direction = 'right';
 let conf = {
   cw: 8,
   size: 4,
   fps: 250
 };
-let context="";
+let context = "";
 let snake_dir = "";
+
 const getPressKey = (key) => {
   snake_dir = key;
 }
+
 // Init Snake
 const initSnake = () => {
-
   // Itaration in Snake Conf Size
   for (var i = 0; i < conf.size; i++) {
-
     // Add Snake Cells
     length.push({
       x: i,
@@ -33,7 +33,6 @@ const initSnake = () => {
 
 // Init Food  
 const initFood = () => {
-
   // Add food on stage
   food = {
     x: Math.round(Math.random() * (width - conf.cw) / conf.cw),
@@ -50,7 +49,8 @@ const restart = () => {
   initSnake();
   initFood();
 };
-const getRestart = () =>{
+
+const getRestart = () => {
   restart();
 }
 
@@ -61,16 +61,13 @@ const drawStage = () => {
   if (typeof (keyPress) != 'undefined') {
     direction = keyPress;
   }
-
   // Draw blue Stage
   context.fillStyle = "#D6C0D4";
   //create filled rectangle context.fillRect(x,y,width,height);
   context.fillRect(0, 0, width, height);
-
   // Snake Position
   var nx = length[0].x;
   var ny = length[0].y;
-
   // Add position by stage direction
   switch (direction) {
     case 'right':
@@ -86,18 +83,15 @@ const drawStage = () => {
       ny++;
       break;
   }
-
   // Check Collision
   if (collision(nx, ny) == true) {
-    if (flag){
+    if (flag) {
       alert("Game over");
-      flag=0;
+      flag = 0;
     }
-    
     restart();
     return;
   }
-
   // Logic of Snake food
   if (nx == food.x && ny == food.y) {
     var tail = {
@@ -112,26 +106,26 @@ const drawStage = () => {
     tail.y = ny;
   }
   length.unshift(tail);
-
   // Draw Snake
   for (var i = 0; i < length.length; i++) {
     var cell = length[i];
     drawCell(cell.x, cell.y);
   }
- // Draw Food
- flag=1;
+  // Draw Food
+  flag = 1;
   drawCell(food.x, food.y);
-  document.querySelector(".score").innerText="Score: "+score;
+  document.querySelector(".score").innerText = "Score: " + score;
 };
 
 // Draw Cell
 const drawCell = (x, y) => {
   context.fillStyle = '#071C02';
   context.beginPath();
-  context.arc((x * conf.cw + 6 ), (y * conf.cw + 6), 3, 0, 2 * Math.PI, false);
+  context.arc((x * conf.cw + 6), (y * conf.cw + 6), 3, 0, 2 * Math.PI, false);
   context.fill();
 
 };
+
 // Check Collision with walls
 const collision = (nx, ny) => {
   if (nx == -1 || nx == 37 || ny == -1 || ny == 19) {
@@ -142,12 +136,12 @@ const collision = (nx, ny) => {
 
 // Game Snake
 const gameSnake = () => {
-  let gamearea = document.querySelector(".game-area");
-  context = gamearea.getContext("2d");
+  context = canvas.getContext("2d");
   initSnake();
   initFood();
-  setInterval( () => {
+  setInterval(() => {
     drawStage();
   }, conf.fps);
 };
+
 gameSnake();

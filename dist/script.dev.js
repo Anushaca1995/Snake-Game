@@ -148,8 +148,7 @@ var collision = function collision(nx, ny) {
 
 
 var gameSnake = function gameSnake() {
-  var gamearea = document.querySelector(".game-area");
-  context = gamearea.getContext("2d");
+  context = canvas.getContext("2d");
   initSnake();
   initFood();
   setInterval(function () {
