@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 body {
-  background-color: #aed27d;
+  background-color: rgb(174, 210, 125);
 }
 body .header {
   font-family: "Alfa Slab One", cursive;
@@ -10,6 +10,12 @@ body .header {
 body .score {
   font-size: 25px;
   color: #074907;
+  text-align: center;
+  font-weight: bold;
+}
+body .game-over {
+  font-size: 35px;
+  color: #c54813;
   text-align: center;
   font-weight: bold;
 }
@@ -30,7 +36,7 @@ body .restart-container {
 }
 body .restart-container .restart-button {
   background-color: #bede6c;
-  color: #0a2305;
+  color: rgb(10, 35, 5);
   padding: 10px;
   text-align: center;
   text-decoration: none;
@@ -57,4 +63,4 @@ body .arrow-container .arrow-button {
   body .canvas-container .game-area {
     width: 100%;
   }
-}
+}/*# sourceMappingURL=style.css.map */
