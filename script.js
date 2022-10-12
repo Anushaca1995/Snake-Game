@@ -51,6 +51,9 @@ const restart = () => {
 };
 
 const getRestart = () => {
+  document.querySelector(".game-over").innerText ="";
+  snake_dir = 'right';
+  document.querySelector(".score").style.color="#074907";
   restart();
 }
 
@@ -87,10 +90,17 @@ const drawStage = () => {
   // Check Collision
   if (collision(nx, ny) == true) {
     if (flag) {
-      alert("Game over");
+      document.querySelector(".game-over").innerText ="Game Over\n Click On Restart";
+      let scoreElement=document.querySelector(".score");
+      switch (score) {
+        case 0:
+          scoreElement.innerText="Your Score is 0.\n Better Luck Next Time";
+          break;
+        default:
+          scoreElement.innerText="Congratulations! Your Score is "+score;
+      }
       flag = 0;
     }
-    restart();
     return;
   }
   // Logic of Snake food
@@ -115,7 +125,7 @@ const drawStage = () => {
   // Draw Food
   flag = 1;
   drawCell(food.x, food.y);
-  document.querySelector(".score").innerText = "Score: " + score;
+  document.querySelector(".score").innerText = "Your Score: " + score;
 };
 
 // Draw Cell
