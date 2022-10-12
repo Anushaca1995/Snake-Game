@@ -8,7 +8,7 @@ Pseudo code for snake game
 
 3. Add food for the snake at the random places inside the game area.
 
-4. Add keyboard events to know about the key coda and to track the snake movement
+4. Add buttons to change the position of the snake.
 
 5. When the snake position and food position becomes same, add score of the player and add another food component randomly.
 
